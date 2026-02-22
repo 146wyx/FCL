@@ -1,0 +1,6 @@
+﻿[2026-02-22 17:57:25.067] [INFO] [LogService] 日志服务已初始化
+[2026-02-22 17:57:25.094] [INFO] [LogService] 日志文件路径: D:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\bin\Debug\net10.0-windows\win-x64\logs\log_2026-02-22_17-57-25.log
+[2026-02-22 17:57:25.095] [INFO] [MainWindow] 应用程序已启动
+[2026-02-22 17:57:32.266] [INFO] [MainWindow] 用户点击了关闭按钮
+[2026-02-22 17:57:32.266] [INFO] [MainWindow] 应用程序正在关闭
+[2026-02-22 17:57:32.267] [INFO] [LogService] 日志服务已关闭
