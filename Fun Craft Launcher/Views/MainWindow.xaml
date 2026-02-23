@@ -22,13 +22,138 @@
             <!-- 顶部标题栏 -->
             <Border Grid.Row="0" Background="#FF3C3C3C" CornerRadius="8,8,0,0" Padding="20,12">
                 <Grid>
-                    <TextBlock Text="Fun Craft Launcher"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 标题 -->
+                    <TextBlock Grid.Column="0"
+                               Text="Fun Craft Launcher"
                                Foreground="White"
                                FontSize="16"
                                FontWeight="SemiBold"
                                VerticalAlignment="Center"/>
 
-                    <Button x:Name="CloseButton"
+                    <!-- 导航按钮 -->
+                    <StackPanel Grid.Column="1" 
+                                Orientation="Horizontal" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <!-- 启动按钮 -->
+                        <Button x:Name="LaunchNavButton"
+                                Height="32"
+                                Width="80"
+                                Margin="0,0,8,0"
+                                Background="#FF0078D4"
+                                Foreground="White"
+                                FontSize="13"
+                                BorderThickness="0"
+                                Click="LaunchNavButton_Click">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE768;" FontFamily="Segoe MDL2 Assets" FontSize="14" Margin="0,0,6,0"/>
+                                    <TextBlock Text="启动"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="16" Padding="12,0">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FF106EBE"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <!-- 下载按钮 -->
+                        <Button x:Name="DownloadNavButton"
+                                Height="32"
+                                Width="80"
+                                Margin="0,0,8,0"
+                                Background="Transparent"
+                                Foreground="#FFAAAAAA"
+                                FontSize="13"
+                                BorderThickness="0"
+                                Click="DownloadNavButton_Click">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE896;" FontFamily="Segoe MDL2 Assets" FontSize="14" Margin="0,0,6,0"/>
+                                    <TextBlock Text="下载"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="16" Padding="12,0">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FF4C4C4C"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <!-- 设置按钮 -->
+                        <Button x:Name="SettingsNavButton"
+                                Height="32"
+                                Width="80"
+                                Background="Transparent"
+                                Foreground="#FFAAAAAA"
+                                FontSize="13"
+                                BorderThickness="0"
+                                Click="SettingsNavButton_Click">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="&#xE713;" FontFamily="Segoe MDL2 Assets" FontSize="14" Margin="0,0,6,0"/>
+                                    <TextBlock Text="设置"/>
+                                </StackPanel>
+                            </Button.Content>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="16" Padding="12,0">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FF4C4C4C"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+
+                    <!-- 关闭按钮 -->
+                    <Button Grid.Column="2"
+                            x:Name="CloseButton"
                             Width="32"
                             Height="32"
                             HorizontalAlignment="Right"
@@ -62,296 +187,13 @@
                 </Grid>
             </Border>
 
-            <!-- 主内容区域 -->
+            <!-- 主内容区域 - 页面切换 -->
             <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="180"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                <!-- 启动页面（首页） - 包含自己的侧边栏 -->
+                <local:LaunchPage x:Name="LaunchContentPanel" Visibility="Visible" Loaded="LaunchContentPanel_Loaded"/>
 
-                <!-- 左侧区域 -->
-                <Border Grid.Column="0" Background="#FF252525" CornerRadius="0,0,0,8" Padding="15,20" Grid.ColumnSpan="2" Margin="0,0,720,0">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <!-- 登录按钮区域 -->
-                        <StackPanel Grid.Row="0" Orientation="Horizontal">
-                            <!-- 正版按钮 -->
-                            <Button x:Name="PremiumLoginButton"
-                                    Height="32"
-                                    Width="80"
-                                    Margin="0,0,10,0"
-                                    Background="#FF0078D4"
-                                    Foreground="White"
-                                    FontSize="12"
-                                    BorderThickness="0"
-                                    Click="PremiumLoginButton_Click">
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xE830;" Margin="0,0,5,0" FontSize="12" x:Name="PremiumCheck" Visibility="Visible" FontFamily="Segoe MDL2 Assets"/>
-                                        <TextBlock Text="正版"/>
-                                    </StackPanel>
-                                </Button.Content>
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="Button">
-                                                    <Border Background="{TemplateBinding Background}" CornerRadius="16">
-                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#FF106EBE"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
-
-                            <!-- 离线按钮 -->
-                            <Button x:Name="OfflineLoginButton"
-                                    Height="32"
-                                    Width="80"
-                                    Background="#FF4CAF50"
-                                    Foreground="White"
-                                    FontSize="12"
-                                    BorderThickness="0"
-                                    Click="OfflineLoginButton_Click">
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xE72E;" Margin="0,0,5,0" FontSize="12" x:Name="OfflineCheck" Visibility="Collapsed" FontFamily="Segoe MDL2 Assets"/>
-                                        <TextBlock Text="离线"/>
-                                    </StackPanel>
-                                </Button.Content>
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="Button">
-                                                    <Border Background="{TemplateBinding Background}" CornerRadius="16">
-                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#FF45A049"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
-
-                            <!-- 已登录信息显示 -->
-                            <StackPanel x:Name="LoggedInInfoPanel" Visibility="Collapsed" Margin="0,20,0,0">
-                                <TextBlock x:Name="UsernameText"
-                                           Text=""
-                                           Foreground="White"
-                                           FontSize="14"
-                                           FontWeight="SemiBold"
-                                           Margin="0,0,0,5"/>
-                                <TextBlock x:Name="LoginTypeText"
-                                           Text=""
-                                           Foreground="#FFAAAAAA"
-                                           FontSize="11"
-                                           Margin="0,0,0,10"/>
-                                <Button x:Name="LogoutButton"
-                                        Height="32"
-                                        Background="#FFDC3545"
-                                        Foreground="White"
-                                        FontSize="12"
-                                        BorderThickness="0"
-                                        Click="LogoutButton_Click">
-                                    <Button.Content>
-                                        <TextBlock Text="退出登录"/>
-                                    </Button.Content>
-                                    <Button.Style>
-                                        <Style TargetType="Button">
-                                            <Setter Property="Template">
-                                                <Setter.Value>
-                                                    <ControlTemplate TargetType="Button">
-                                                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
-                                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                        </Border>
-                                                    </ControlTemplate>
-                                                </Setter.Value>
-                                            </Setter>
-                                            <Style.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter Property="Background" Value="#FFC82333"/>
-                                                </Trigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Button.Style>
-                                </Button>
-                            </StackPanel>
-                        </StackPanel>
-
-                        <!-- 正版登录面板 -->
-                        <StackPanel x:Name="PremiumLoginPanel" Grid.Row="1" Visibility="Visible" VerticalAlignment="Center" Margin="0,20,0,0">
-                            <!-- 玩家头像 -->
-                            <Border x:Name="PremiumPlayerAvatar"
-                                    Width="80"
-                                    Height="80"
-                                    Background="#FF3C3C3C"
-                                    CornerRadius="8"
-                                    Margin="0,0,0,10"
-                                    Visibility="Collapsed">
-                                <TextBlock x:Name="PremiumPlayerAvatarText"
-                                           Text=""
-                                           Foreground="White"
-                                           FontSize="36"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"/>
-                            </Border>
-                            <!-- 玩家ID -->
-                            <TextBlock x:Name="PremiumPlayerNameText"
-                                       Text=""
-                                       Foreground="White"
-                                       FontSize="16"
-                                       FontWeight="SemiBold"
-                                       HorizontalAlignment="Center"
-                                       Margin="0,0,0,5"
-                                       Visibility="Collapsed"/>
-                            <Button x:Name="PremiumConfirmButton"
-                                    Height="36"
-                                    Background="#FF0078D4"
-                                    Foreground="White"
-                                    FontSize="13"
-                                    BorderThickness="0"
-                                    Content="登录"
-                                    Click="PremiumConfirmButton_Click">
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="Button">
-                                                    <Border Background="{TemplateBinding Background}" CornerRadius="6">
-                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#FF106EBE"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
-                        </StackPanel>
-
-                        <!-- 离线登录面板 -->
-                        <StackPanel x:Name="OfflineLoginPanel" Grid.Row="1" Visibility="Collapsed" VerticalAlignment="Center" Margin="0,20,0,0">
-                            <Border Background="#FF3C3C3C" CornerRadius="8" Padding="15" Margin="0,0,0,15">
-                                <TextBlock Text="&#xE72E;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="White" HorizontalAlignment="Center"/>
-                            </Border>
-                            <TextBlock Text="离线登录" Foreground="White" FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,0,0,15"/>
-                            <TextBox x:Name="OfflineUsernameTextBox"
-                                     Height="36"
-                                     Background="#FF3C3C3C"
-                                     Foreground="White"
-                                     BorderThickness="0"
-                                     Padding="10,0"
-                                     VerticalContentAlignment="Center"
-                                     FontSize="13"
-                                     Margin="0,0,0,10"/>
-                            <Button x:Name="OfflineConfirmButton"
-                                    Height="36"
-                                    Background="#FF4CAF50"
-                                    Foreground="White"
-                                    FontSize="13"
-                                    BorderThickness="0"
-                                    Content="进入游戏"
-                                    Click="OfflineConfirmButton_Click">
-                                <Button.Style>
-                                    <Style TargetType="Button">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="Button">
-                                                    <Border Background="{TemplateBinding Background}" CornerRadius="6">
-                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#FF45A049"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
-                            </Button>
-                        </StackPanel>
-
-                        <!-- 启动游戏按钮 - 底部 -->
-                        <Button Grid.Row="2" 
-                                x:Name="LaunchButton"
-                                Content="启动游戏"
-                                Height="45"
-                                Margin="0,15,0,0"
-                                Background="#FF4CAF50"
-                                Foreground="White"
-                                FontSize="14"
-                                FontWeight="SemiBold"
-                                BorderThickness="0"
-                                Click="LaunchButton_Click">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="22">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#FF45A049"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </Grid>
-                </Border>
-
-                <!-- 右侧内容 - 已登录时显示皮肤 -->
-                <Grid Grid.Column="1" Margin="20">
-                    <StackPanel x:Name="RightContentPanel" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
-                        <!-- 皮肤头像 -->
-                        <Border Width="100" Height="100"
-                                Background="#FF3C3C3C"
-                                CornerRadius="8"
-                                Margin="0,0,0,15">
-                            <TextBlock x:Name="AvatarText"
-                                       Text="?"
-                                       Foreground="White"
-                                       FontSize="48"
-                                       HorizontalAlignment="Center"
-                                       VerticalAlignment="Center"/>
-                        </Border>
-
-                        <TextBlock x:Name="WelcomeText"
-                                   Text=""
-                                   Foreground="#FFAAAAAA"
-                                   FontSize="14"
-                                   TextAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                <!-- 下载页面 - 包含自己的侧边栏 -->
+                <local:DownloadPage x:Name="DownloadContentPanel" Visibility="Collapsed"/>
             </Grid>
         </Grid>
     </Border>

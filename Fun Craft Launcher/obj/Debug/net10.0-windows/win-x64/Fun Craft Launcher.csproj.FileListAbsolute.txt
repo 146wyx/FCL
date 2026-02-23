@@ -418,3 +418,10 @@ d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-
 d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Fun Craft Launcher.pdb
 d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Fun Craft Launcher.genruntimeconfig.cache
 d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\ref\Fun Craft Launcher.dll
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\GeneratedInternalTypeHelper.g.cs
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Views\DownloadPage.baml
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Views\LaunchPage.baml
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Views\DownloadPage.g.cs
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Views\LaunchPage.g.cs
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Views\DownloadOptionsDialog.baml
+d:\Code\Launcher\Minecraft\FCL\Fun Craft Launcher\obj\Debug\net10.0-windows\win-x64\Views\DownloadOptionsDialog.g.cs
