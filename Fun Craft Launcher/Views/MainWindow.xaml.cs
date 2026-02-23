@@ -25,9 +25,9 @@ namespace FunCraftLauncher.Views
         {
             try
             {
-                // 获取启动器所在目录
-                var launcherDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                var gameDir = Path.Combine(launcherDir!, ".minecraft");
+                // 获取启动器所在目录（使用 AppContext.BaseDirectory 兼容单文件发布）
+                var launcherDir = AppContext.BaseDirectory;
+                var gameDir = Path.Combine(launcherDir, ".minecraft");
                 
                 if (!Directory.Exists(gameDir))
                 {

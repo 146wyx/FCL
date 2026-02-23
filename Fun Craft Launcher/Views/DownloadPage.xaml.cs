@@ -360,8 +360,8 @@ namespace FunCraftLauncher.Views
                         $"开始下载 - 版本: {dialog.SelectedVersion}, Mod加载器: {modLoaderText}, Mod版本: {dialog.SelectedModLoaderVersion}");
                     
                     // 创建下载管理器，使用启动器所在目录下的 .minecraft 文件夹
-                    var launcherDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                    var gameDir = Path.Combine(launcherDir!, ".minecraft");
+                    var launcherDir = AppContext.BaseDirectory;
+                    var gameDir = Path.Combine(launcherDir, ".minecraft");
                     var downloadManager = new DownloadManager(gameDir);
                     
                     // 订阅下载事件
