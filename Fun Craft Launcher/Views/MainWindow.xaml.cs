@@ -85,7 +85,7 @@ namespace FunCraftLauncher.Views
         private void SettingsNavButton_Click(object sender, RoutedEventArgs e)
         {
             LogService.Instance.WriteInfo("MainWindow", "用户点击设置按钮");
-            MessageBox.Show("设置功能开发中...", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            ShowPage("settings");
         }
 
         private void ShowPage(string page)
@@ -101,6 +101,7 @@ namespace FunCraftLauncher.Views
             // 隐藏所有页面
             LaunchContentPanel.Visibility = Visibility.Collapsed;
             DownloadContentPanel.Visibility = Visibility.Collapsed;
+            SettingsContentPanel.Visibility = Visibility.Collapsed;
 
             // 显示选中的页面
             switch (page)
@@ -114,6 +115,11 @@ namespace FunCraftLauncher.Views
                     DownloadContentPanel.Visibility = Visibility.Visible;
                     DownloadNavButton.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 120, 212));
                     DownloadNavButton.Foreground = System.Windows.Media.Brushes.White;
+                    break;
+                case "settings":
+                    SettingsContentPanel.Visibility = Visibility.Visible;
+                    SettingsNavButton.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0, 120, 212));
+                    SettingsNavButton.Foreground = System.Windows.Media.Brushes.White;
                     break;
             }
         }

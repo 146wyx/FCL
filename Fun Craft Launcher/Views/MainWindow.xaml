@@ -194,6 +194,9 @@
 
                 <!-- 下载页面 - 包含自己的侧边栏 -->
                 <local:DownloadPage x:Name="DownloadContentPanel" Visibility="Collapsed"/>
+
+                <!-- 设置页面 -->
+                <local:SettingsPage x:Name="SettingsContentPanel" Visibility="Collapsed"/>
             </Grid>
         </Grid>
     </Border>

@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ehRefNoLz68=",
+  "dgSpecHash": "ZnvbDX00ywg=",
   "success": true,
-  "projectFilePath": "d:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj",
+  "projectFilePath": "D:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.identity.client\\4.82.1\\microsoft.identity.client.4.82.1.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.14.0\\microsoft.identitymodel.abstractions.8.14.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.3\\microsoft.net.illink.tasks.10.0.3.nupkg.sha512",
-    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.3\\microsoft.netcore.app.runtime.win-x64.10.0.3.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.3\\microsoft.aspnetcore.app.runtime.win-x64.10.0.3.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\10.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.10.0.3.nupkg.sha512",
-    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\10.0.3\\microsoft.aspnetcore.app.runtime.win-x64.10.0.3.nupkg.sha512"
+    "C:\\Users\\Dell\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\10.0.3\\microsoft.netcore.app.runtime.win-x64.10.0.3.nupkg.sha512"
   ],
   "logs": []
 }

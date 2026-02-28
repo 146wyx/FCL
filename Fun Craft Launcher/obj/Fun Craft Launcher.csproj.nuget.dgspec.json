@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj": {}
+    "D:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj": {}
   },
   "projects": {
-    "d:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj": {
+    "D:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj",
+        "projectUniqueName": "D:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj",
         "projectName": "Fun Craft Launcher",
-        "projectPath": "d:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj",
+        "projectPath": "D:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\Fun Craft Launcher.csproj",
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "d:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\obj\\",
+        "outputPath": "D:\\Code\\Launcher\\Minecraft\\FCL\\Fun Craft Launcher\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
